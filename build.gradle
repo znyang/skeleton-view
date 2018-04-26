@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        maven { url "https://jitpack.io" }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+        jcenter()
+    }
+
+    version = POM_VERSION
+    group = POM_GROUP_ID
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
