@@ -17,8 +17,8 @@ public class HolderTextView extends TextView {
 
     private float placeholderLineHeight;
     private float singleLineWidth;
-    private float linesToDraw;
-    private int   baseLineSpacing;
+    private float linesToDraw = 1f;
+    private int baseLineSpacing;
 
     private Paint placeholderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 

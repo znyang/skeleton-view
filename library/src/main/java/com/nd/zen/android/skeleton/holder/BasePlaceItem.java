@@ -7,19 +7,17 @@ package com.nd.zen.android.skeleton.holder;
  */
 public abstract class BasePlaceItem {
 
-    private int mTypeId;
     private int mRepeatCount;
 
-    public BasePlaceItem(int repeatCount, Class<? extends PlaceHolder> cls) {
+    public BasePlaceItem(int repeatCount) {
         mRepeatCount = repeatCount;
-        mTypeId = cls.hashCode();
-    }
-
-    public PlaceHolder findPlaceHolder() {
-        return SkeletonManager.getHolder(mTypeId);
     }
 
     public int getRepeatCount() {
         return mRepeatCount;
+    }
+
+    public IPlaceHolderGenerator findPlaceHolder() {
+        return SkeletonManager.getHolder(getClass().hashCode());
     }
 }

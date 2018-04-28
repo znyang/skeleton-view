@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 import com.nd.zen.android.skeleton.holder.BasePlaceItem;
-import com.nd.zen.android.skeleton.holder.PlaceHolder.PlaceViewHolder;
+import com.nd.zen.android.skeleton.holder.PlaceViewHolder;
 import com.nd.zen.android.skeleton.holder.SkeletonManager;
 import java.util.List;
 
@@ -36,7 +36,8 @@ public class SkeletonViewAdapter extends RecyclerView.Adapter<PlaceViewHolder> {
 
     @Override
     public PlaceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return SkeletonManager.getHolder(viewType).onCreateViewHolder(parent.getContext());
+        return SkeletonManager.getHolder(viewType)
+                .onCreateViewHolder(parent);
     }
 
     @Override
